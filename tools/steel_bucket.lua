@@ -18,7 +18,7 @@ bucket.api.register_bucket("bucket:bucket_steel", {
     }
 })
 
-local material = bucket.resources.materials.steel_ingot
+local material = bucket.resources.materials.steel
 
 if material then
     minetest.register_craft({
