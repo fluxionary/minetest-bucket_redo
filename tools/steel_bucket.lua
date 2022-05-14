@@ -17,3 +17,17 @@ bucket.api.register_bucket("bucket:bucket_steel", {
         [bucket.settings.liquid_group] = 6,
     }
 })
+
+local material = bucket.resources.materials.steel_ingot
+
+if material then
+    minetest.register_craft({
+        output = "bucket:bucket_steel",
+        type = "shaped",
+        recipe = {
+            {material, "",       material},
+            {material, "",       material},
+            {"",       material, ""},
+        }
+    })
+end
