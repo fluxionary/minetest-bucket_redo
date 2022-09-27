@@ -1,6 +1,8 @@
 local materials = bucket.resources.materials
 
 function bucket.register_liquid(source, flowing, itemname, inventory_image, name, groups, force_renew, level)
+    level = level or 3
+
     local source_def = minetest.registered_items[source]
     local source_groups = table.copy(source_def.groups or {})
     source_groups[bucket.settings.liquid_group] = level
