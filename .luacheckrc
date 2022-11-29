@@ -650,6 +650,7 @@ stds.bucket = {
 		"bucket",
 	},
 	read_globals = {
+		"default",
 		"fmod",
 	},
 }
