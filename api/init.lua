@@ -1,3 +1,5 @@
+local log = bucket.log
+
 bucket.api = {}
 
 function bucket.api.register_bucket(name, def)
@@ -19,7 +21,7 @@ function bucket.api.register_bucket(name, def)
 		},
 	})
 
-	bucket.log(
+	log(
 		"action",
 		"[DEBUG] %s; liquids_pointable=%s",
 		name,
