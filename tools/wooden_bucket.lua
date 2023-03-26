@@ -22,8 +22,7 @@ local material = bucket.resources.materials.wood
 
 if material then
 	minetest.register_craft({
-		output = "bucket:bucket_steel",
-		type = "shaped",
+		output = "bucket:bucket_wood",
 		recipe = {
 			{ material, "", material },
 			{ material, "", material },
