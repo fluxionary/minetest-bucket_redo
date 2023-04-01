@@ -26,7 +26,6 @@ if material then
 		type = "shaped",
 		recipe = {
 			{ material, "", material },
-			{ material, "", material },
 			{ "", material, "" },
 		},
 	})

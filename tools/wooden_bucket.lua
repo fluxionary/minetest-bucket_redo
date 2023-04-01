@@ -25,7 +25,6 @@ if material then
 		output = "bucket:bucket_wood",
 		recipe = {
 			{ material, "", material },
-			{ material, "", material },
 			{ "", material, "" },
 		},
 	})
