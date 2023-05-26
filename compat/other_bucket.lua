@@ -8,6 +8,9 @@ function bucket.register_liquid(source, flowing, itemname, inventory_image, name
 	local source_def = minetest.registered_items[source]
 	local source_groups = table.copy(source_def.groups or {})
 	source_groups[bucket.settings.liquid_group] = level
+	if groups then
+		futil.table.set_all(source_groups, groups)
+	end
 	minetest.override_item(source, {
 		groups = source_groups,
 		diggable = true,
@@ -42,7 +45,7 @@ minetest.register_alias_force("bucket_lava", "bucket:bucket_lava")
 minetest.register_alias_force("bucket:bucket_empty", "bucket:bucket_steel")
 
 if materials.water then
-	bucket.register_liquid(materials.water, nil, "bucket:bucket_water", nil, nil, nil, nil, 3)
+	bucket.register_liquid(materials.water, nil, "bucket:bucket_water", nil, nil, { water_bucket = 1 }, nil, 3)
 else
 	minetest.register_alias_force("bucket:bucket_water", "bucket:bucket_steel")
 end
@@ -54,7 +57,16 @@ else
 end
 
 if materials.river_water then
-	bucket.register_liquid(materials.river_water, nil, "bucket:bucket_river_water", nil, nil, nil, nil, 3)
+	bucket.register_liquid(
+		materials.river_water,
+		nil,
+		"bucket:bucket_river_water",
+		nil,
+		nil,
+		{ water_bucket = 1 },
+		nil,
+		3
+	)
 else
 	minetest.register_alias_force("bucket:bucket_river_water", "bucket:bucket_steel")
 end

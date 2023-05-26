@@ -652,5 +652,6 @@ stds.bucket = {
 	read_globals = {
 		"default",
 		"fmod",
+		"futil",
 	},
 }
