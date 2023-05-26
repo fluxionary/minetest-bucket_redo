@@ -1,5 +1,7 @@
 local materials = bucket.resources.materials
 
+bucket.liquids = {}
+
 function bucket.register_liquid(source, flowing, itemname, inventory_image, name, groups, force_renew, level)
 	level = level or 3
 
@@ -25,6 +27,13 @@ function bucket.register_liquid(source, flowing, itemname, inventory_image, name
 	})
 
 	minetest.register_alias_force(itemname, source)
+
+	bucket.liquids[source] = {
+		source = source,
+		flowing = flowing,
+		itemname = source,
+		force_renew = force_renew,
+	}
 end
 
 minetest.register_alias_force("bucket", "bucket:bucket_steel")
