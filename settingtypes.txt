@@ -1,2 +1,2 @@
 # the type that liquids will get to be dig-able w/ a bucket
-bucket:liquid_group (liquid group) string sloshy
+bucket.liquid_group (liquid group) string sloshy
